@@ -57,8 +57,6 @@
 		C609C8AE2CC9F5AC007D0C08 = {
 			isa = PBXGroup;
 			children = (
-				C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */,
-				C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */,
 				C609C8D32CC9F8DD007D0C08 /* Model */,
 				C609C8D22CC9F8D1007D0C08 /* View */,
 				C609C8D12CC9F8A7007D0C08 /* Controller */,
@@ -111,6 +109,8 @@
 		C609C8D32CC9F8DD007D0C08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */,
+				C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */,
 				C609C8C32CC9F5AC007D0C08 /* Barman.xcdatamodeld */,
 			);
 			path = Model;
