@@ -1,8 +1,8 @@
 //
-//  SceneDelegate.swift
+//  DataManager.swift
 //  Barman
 //
-//  Created by Paola Delgadillo on 10/23/24.
+//  Created by Israel Aguilar on 10/23/24.
 //
 
 import UIKit

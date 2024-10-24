@@ -14,6 +14,11 @@
 		C609C8C52CC9F5AC007D0C08 /* Barman.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C609C8C32CC9F5AC007D0C08 /* Barman.xcdatamodeld */; };
 		C609C8C72CC9F5AE007D0C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */; };
 		C609C8CA2CC9F5AE007D0C08 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C609C8C92CC9F5AE007D0C08 /* Base */; };
+		C609C8D62CC9FAA5007D0C08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C609C8D52CC9FAA5007D0C08 /* CoreData.framework */; };
+		C609C8DE2CC9FD74007D0C08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8DD2CC9FD74007D0C08 /* DataManager.swift */; };
+		C609C8E02CC9FF7D007D0C08 /* InternetMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8DF2CC9FF7D007D0C08 /* InternetMonitor.swift */; };
+		C609C8E32CCA0805007D0C08 /* Drinks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */; };
+		C609C8E42CCA0805007D0C08 /* Drinks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C609C8C92CC9F5AE007D0C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C609C8CB2CC9F5AE007D0C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C609C8D52CC9FAA5007D0C08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C609C8DD2CC9FD74007D0C08 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C609C8DF2CC9FF7D007D0C08 /* InternetMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetMonitor.swift; sourceTree = "<group>"; };
+		C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C609C8D62CC9FAA5007D0C08 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +53,14 @@
 		C609C8AE2CC9F5AC007D0C08 = {
 			isa = PBXGroup;
 			children = (
+				C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */,
+				C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */,
+				C609C8D32CC9F8DD007D0C08 /* Model */,
+				C609C8D22CC9F8D1007D0C08 /* View */,
+				C609C8D12CC9F8A7007D0C08 /* Controller */,
 				C609C8B92CC9F5AC007D0C08 /* Barman */,
 				C609C8B82CC9F5AC007D0C08 /* Products */,
+				C609C8D42CC9FAA4007D0C08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +75,47 @@
 		C609C8B92CC9F5AC007D0C08 /* Barman */ = {
 			isa = PBXGroup;
 			children = (
+				C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */,
+				C609C8CB2CC9F5AE007D0C08 /* Info.plist */,
+			);
+			path = Barman;
+			sourceTree = "<group>";
+		};
+		C609C8D12CC9F8A7007D0C08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C609C8DF2CC9FF7D007D0C08 /* InternetMonitor.swift */,
 				C609C8BA2CC9F5AC007D0C08 /* AppDelegate.swift */,
 				C609C8BC2CC9F5AC007D0C08 /* SceneDelegate.swift */,
 				C609C8BE2CC9F5AC007D0C08 /* ViewController.swift */,
+				C609C8DD2CC9FD74007D0C08 /* DataManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C609C8D22CC9F8D1007D0C08 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				C609C8C02CC9F5AC007D0C08 /* Main.storyboard */,
-				C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */,
 				C609C8C82CC9F5AE007D0C08 /* LaunchScreen.storyboard */,
-				C609C8CB2CC9F5AE007D0C08 /* Info.plist */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C609C8D32CC9F8DD007D0C08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				C609C8C32CC9F5AC007D0C08 /* Barman.xcdatamodeld */,
 			);
-			path = Barman;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C609C8D42CC9FAA4007D0C08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C609C8D52CC9FAA5007D0C08 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C609C8C52CC9F5AC007D0C08 /* Barman.xcdatamodeld in Sources */,
+				C609C8E02CC9FF7D007D0C08 /* InternetMonitor.swift in Sources */,
 				C609C8BF2CC9F5AC007D0C08 /* ViewController.swift in Sources */,
 				C609C8BB2CC9F5AC007D0C08 /* AppDelegate.swift in Sources */,
+				C609C8DE2CC9FD74007D0C08 /* DataManager.swift in Sources */,
 				C609C8BD2CC9F5AC007D0C08 /* SceneDelegate.swift in Sources */,
+				C609C8E32CCA0805007D0C08 /* Drinks+CoreDataClass.swift in Sources */,
+				C609C8E42CCA0805007D0C08 /* Drinks+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +351,7 @@
 				DEVELOPMENT_TEAM = UMHY4G42PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Barman/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Barman;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -327,6 +380,7 @@
 				DEVELOPMENT_TEAM = UMHY4G42PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Barman/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Barman;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
