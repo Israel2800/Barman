@@ -20,6 +20,7 @@
 		C609C8E32CCA0805007D0C08 /* Drinks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */; };
 		C609C8E42CCA0805007D0C08 /* Drinks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */; };
 		C609C8E62CCA0F06007D0C08 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E52CCA0F06007D0C08 /* TableViewController.swift */; };
+		C609C8E82CCA1462007D0C08 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E72CCA1462007D0C08 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C609C8E12CCA0805007D0C08 /* Drinks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C609C8E52CCA0F06007D0C08 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C609C8E72CCA1462007D0C08 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C609C8D22CC9F8D1007D0C08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C609C8E72CCA1462007D0C08 /* DetailView.swift */,
 				C609C8C02CC9F5AC007D0C08 /* Main.storyboard */,
 				C609C8C82CC9F5AE007D0C08 /* LaunchScreen.storyboard */,
 			);
@@ -195,6 +198,7 @@
 				C609C8C52CC9F5AC007D0C08 /* Barman.xcdatamodeld in Sources */,
 				C609C8E02CC9FF7D007D0C08 /* InternetMonitor.swift in Sources */,
 				C609C8BF2CC9F5AC007D0C08 /* ViewController.swift in Sources */,
+				C609C8E82CCA1462007D0C08 /* DetailView.swift in Sources */,
 				C609C8BB2CC9F5AC007D0C08 /* AppDelegate.swift in Sources */,
 				C609C8DE2CC9FD74007D0C08 /* DataManager.swift in Sources */,
 				C609C8BD2CC9F5AC007D0C08 /* SceneDelegate.swift in Sources */,

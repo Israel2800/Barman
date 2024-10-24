@@ -11,7 +11,22 @@ class TableViewController: UITableViewController {
 
     var drinks = [Drinks]()
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        drinks = DataManager.shared.todasLasBebidas()
+        NotificationCenter.default.addObserver(self, selector: #selector(mostrarTabla), name: NSNotification.Name(rawValue: "BD_LISTA"), object: nil)
+    }
+    
+    @objc func mostrarTabla() {
+        drinks = DataManager.shared.todasLasBebidas()
+        print ("Mostrando la tabla")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    /*override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -19,30 +34,46 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    }*/
 
     // MARK: - Table view data source
 
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return drinks.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath)
 
-        // Configure the cell...
+        let d = drinks[indexPath.row]
+        cell.textLabel?.text = d.name
 
         return cell
     }
-    */
-
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let d = drinks[indexPath.row]
+        performSegue(withIdentifier: "show", sender: d)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        let destino = segue.destination as! ViewController
+        // Pass the selected object to the new view controller.
+        destino.laBebida = sender as? Drinks
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
