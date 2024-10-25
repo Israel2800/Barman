@@ -21,7 +21,7 @@ class DataManager: NSObject {
         let elQuery = Drinks.fetchRequest()
         do {
             arreglo = try persistentContainer.viewContext.fetch(elQuery)
-        } catch { print ("¡Error en el Query!") }
+        } catch { print ("¡Error en el Query 1!") }
         return arreglo
     }
     
@@ -57,7 +57,7 @@ class DataManager: NSObject {
         do {
             let tmp = try persistentContainer.viewContext.fetch(elQuery) as! [Drinks]
             return tmp.first
-        } catch { print("¡Error en el query!") }
+        } catch { print("¡Error en el query 2!") }
         return nil
     }
     
@@ -81,7 +81,7 @@ class DataManager: NSObject {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "Drinks")
+        let container = NSPersistentContainer(name: "Barman")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
