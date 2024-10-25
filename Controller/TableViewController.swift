@@ -2,7 +2,7 @@
 //  TableViewController.swift
 //  Barman
 //
-//  Created by Paola Delgadillo on 10/24/24.
+//  Created by Israel Aguilar on 10/24/24.
 //
 
 import UIKit
@@ -69,7 +69,7 @@ class TableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        let destino = segue.destination as! ViewController
+        let destino = segue.destination as! DetailViewController
         // Pass the selected object to the new view controller.
         destino.laBebida = sender as? Drinks
     }

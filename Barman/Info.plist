@@ -22,6 +22,9 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
+                    <key>NSPhotoLibraryUsageDescription</key>
+                    <string>La aplicación necesita acceso a tus fotos para seleccionar una imagen.</string>
+
 				</dict>
 			</array>
 		</dict>

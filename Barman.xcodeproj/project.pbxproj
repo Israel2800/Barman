@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C609C8BB2CC9F5AC007D0C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8BA2CC9F5AC007D0C08 /* AppDelegate.swift */; };
 		C609C8BD2CC9F5AC007D0C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8BC2CC9F5AC007D0C08 /* SceneDelegate.swift */; };
-		C609C8BF2CC9F5AC007D0C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8BE2CC9F5AC007D0C08 /* ViewController.swift */; };
+		C609C8BF2CC9F5AC007D0C08 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8BE2CC9F5AC007D0C08 /* DetailViewController.swift */; };
 		C609C8C22CC9F5AC007D0C08 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C609C8C12CC9F5AC007D0C08 /* Base */; };
 		C609C8C52CC9F5AC007D0C08 /* Barman.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C609C8C32CC9F5AC007D0C08 /* Barman.xcdatamodeld */; };
 		C609C8C72CC9F5AE007D0C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */; };
@@ -21,13 +21,14 @@
 		C609C8E42CCA0805007D0C08 /* Drinks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */; };
 		C609C8E62CCA0F06007D0C08 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E52CCA0F06007D0C08 /* TableViewController.swift */; };
 		C609C8E82CCA1462007D0C08 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E72CCA1462007D0C08 /* DetailView.swift */; };
+		C609C8EA2CCB5F0E007D0C08 /* NewDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C609C8E92CCB5F0E007D0C08 /* NewDrinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C609C8B72CC9F5AC007D0C08 /* Barman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C609C8BA2CC9F5AC007D0C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C609C8BC2CC9F5AC007D0C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C609C8BE2CC9F5AC007D0C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C609C8BE2CC9F5AC007D0C08 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C609C8C12CC9F5AC007D0C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C609C8C42CC9F5AC007D0C08 /* Barman.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Barman.xcdatamodel; sourceTree = "<group>"; };
 		C609C8C62CC9F5AE007D0C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		C609C8E22CCA0805007D0C08 /* Drinks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C609C8E52CCA0F06007D0C08 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C609C8E72CCA1462007D0C08 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C609C8E92CCB5F0E007D0C08 /* NewDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDrinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +91,10 @@
 				C609C8DF2CC9FF7D007D0C08 /* InternetMonitor.swift */,
 				C609C8BA2CC9F5AC007D0C08 /* AppDelegate.swift */,
 				C609C8BC2CC9F5AC007D0C08 /* SceneDelegate.swift */,
-				C609C8BE2CC9F5AC007D0C08 /* ViewController.swift */,
+				C609C8BE2CC9F5AC007D0C08 /* DetailViewController.swift */,
 				C609C8DD2CC9FD74007D0C08 /* DataManager.swift */,
 				C609C8E52CCA0F06007D0C08 /* TableViewController.swift */,
+				C609C8E92CCB5F0E007D0C08 /* NewDrinkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 			files = (
 				C609C8C52CC9F5AC007D0C08 /* Barman.xcdatamodeld in Sources */,
 				C609C8E02CC9FF7D007D0C08 /* InternetMonitor.swift in Sources */,
-				C609C8BF2CC9F5AC007D0C08 /* ViewController.swift in Sources */,
+				C609C8BF2CC9F5AC007D0C08 /* DetailViewController.swift in Sources */,
 				C609C8E82CCA1462007D0C08 /* DetailView.swift in Sources */,
 				C609C8BB2CC9F5AC007D0C08 /* AppDelegate.swift in Sources */,
 				C609C8DE2CC9FD74007D0C08 /* DataManager.swift in Sources */,
@@ -205,6 +208,7 @@
 				C609C8E32CCA0805007D0C08 /* Drinks+CoreDataClass.swift in Sources */,
 				C609C8E62CCA0F06007D0C08 /* TableViewController.swift in Sources */,
 				C609C8E42CCA0805007D0C08 /* Drinks+CoreDataProperties.swift in Sources */,
+				C609C8EA2CCB5F0E007D0C08 /* NewDrinkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
