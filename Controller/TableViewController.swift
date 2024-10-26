@@ -68,11 +68,19 @@ class TableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        let destino = segue.destination as! DetailViewController
-        // Pass the selected object to the new view controller.
-        destino.laBebida = sender as? Drinks
+        if segue.identifier == "addDrinkSegue" {
+            if let destinationVC = segue.destination as? NewDrinkViewController {
+                // Pasar datos a NewDrinkViewController
+            }
+        } else if segue.identifier == "show" {
+            if let destino = segue.destination as? DetailViewController {
+                destino.laBebida = sender as? Drinks
+            }
+        }
+        
+       
     }
+    
     
     /*
     // Override to support conditional editing of the table view.
