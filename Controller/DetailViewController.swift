@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
     // Función para actualizar los elementos
     func updateUIWithViewController() {
         DrinkName.text = laBebida.name ?? ""
-                
         IngredientsDrink.text = laBebida.ingredients ?? ""
         DirectionsDrink.text = laBebida.directions ?? ""
         
@@ -91,20 +90,6 @@ class DetailViewController: UIViewController {
         }
         downloadTask.resume()
     }
-
-    
-    
-    /* override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let info = 
-        "Name: \(laBebida.name ?? "")\n" +
-        "img: \(laBebida.img ?? "")\n" +
-        "ingredients: \(laBebida.ingredients ?? "")\n" +
-        "directions: \(laBebida.directions ?? "")\n"
-        
-        detalle.tv.text = info
-        
-    } */
 
 
 }

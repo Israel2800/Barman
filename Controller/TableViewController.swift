@@ -15,14 +15,21 @@ class TableViewController: UITableViewController {
         super.viewWillAppear(animated)
         drinks = DataManager.shared.todasLasBebidas()
         NotificationCenter.default.addObserver(self, selector: #selector(mostrarTabla), name: NSNotification.Name(rawValue: "BD_LISTA"), object: nil)
+        
+        // Notificación de nueva bebida
+        NotificationCenter.default.addObserver(self, selector: #selector(mostrarTabla), name: NSNotification.Name("NewDrinkAdded"), object: nil)
     }
     
     @objc func mostrarTabla() {
         drinks = DataManager.shared.todasLasBebidas()
-        print ("Mostrando la tabla")
+        //print ("Mostrando la tabla")
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("NewDrinkAdded"), object: nil)
     }
     
     
@@ -74,6 +81,11 @@ class TableViewController: UITableViewController {
             }
         } else if segue.identifier == "show" {
             if let destino = segue.destination as? DetailViewController {
+                destino.laBebida = sender as? Drinks
+            }
+        } else if segue.identifier == "showNewDrink" {
+            if let destino = segue.destination as? DetailViewController {
+                // Pasar los nuevos datos a DetailViewController
                 destino.laBebida = sender as? Drinks
             }
         }

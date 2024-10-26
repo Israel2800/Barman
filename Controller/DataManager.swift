@@ -40,6 +40,12 @@ class DataManager: NSObject {
                         do {
                             let tmp = try JSONSerialization.jsonObject(with: data!) as! [[String: Any]]
                             self.guardaBebidas (tmp)
+                            
+                            // Enviar notificación para recargar la tabla
+                            DispatchQueue.main.async {
+                                NotificationCenter.default.post(name: NSNotification.Name("BD_LISTA"), object: nil)
+                            }
+                            
                         } catch { print ("No se obtuvo un JSON en la respuesta.") }
                         ud.set(1, forKey: "BD-OK")
                     }
