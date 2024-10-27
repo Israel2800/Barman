@@ -11,6 +11,8 @@ class DetailViewController: UIViewController {
 
     var laBebida : Drinks!
     
+    
+    
     @IBOutlet weak var DrinkName: UITextView!
     
     @IBOutlet weak var ImageDrink: UIImageView!
@@ -22,7 +24,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         updateUIWithViewController()
     }
     
@@ -41,6 +43,8 @@ class DetailViewController: UIViewController {
             loadImage(named: imageName)
         }
         
+        //loadImage(named: laBebida.img ?? "drinks")
+
     }
     
     private func loadImage(named imageName: String) {
@@ -51,6 +55,9 @@ class DetailViewController: UIViewController {
         if fileManager.fileExists(atPath: imageFileURL.path) {
             // Si ya existe la imagen se carga desde Documents
             ImageDrink.image = UIImage(contentsOfFile: imageFileURL.path)
+        } else if imageName == "drinks" {
+            ImageDrink.image = UIImage(named: "drinks")
+            
         } else {
             // Si no existe la imagen, se descargará usando la URL
             let fullImageURL = "http://janzelaznog.com/DDAM/iOS/drinksimages/\(imageName)"

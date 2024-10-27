@@ -8,47 +8,39 @@
 import UIKit
 
 class NewDrinkViewController: UIViewController {
-
+    
+    //@IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var contentView: UIView!
     @IBOutlet weak var nameTyped: UITextField!
-    
     @IBOutlet weak var ingredientsTyped: UITextField!
-    
     @IBOutlet weak var directionsTyped: UITextField!
-    
-    //@IBOutlet weak var addImgBtn: UIButton!
-
     @IBOutlet weak var addImg: UITextField!
-    
+
     @IBAction func saveNewDrinkBtn(_ sender: UIButton) {
         guard let name = nameTyped.text, !name.isEmpty,
               let ingredients = ingredientsTyped.text, !ingredients.isEmpty,
-              let directions = directionsTyped.text, !directions.isEmpty,
-              let img = addImg.text, !img.isEmpty else {
-            // Mostrar mensaje de error si algún campo está vacío
+              let directions = directionsTyped.text, !directions.isEmpty else {
             let alert = UIAlertController(
                 title: "Campos Vacíos",
-                message: "Por favor, completa todos los campos.",
+                message: "Por favor, completa todos los campos",
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
             return
         }
+
+        let img = addImg.text?.isEmpty == false ? addImg.text! : "drinks"
         
-        // Crear un nuevo objeto Drinks y guardar en Core Data
         let newDrink = Drinks(context: DataManager.shared.persistentContainer.viewContext)
         newDrink.name = name
         newDrink.ingredients = ingredients
         newDrink.directions = directions
-        newDrink.img = img // Configurar
-        
-        // Guardar cambios en Core Data
+        newDrink.img = img
+
         DataManager.shared.saveContext()
-        
-        // Enviar notificación para actualizar el TableViewController
         NotificationCenter.default.post(name: NSNotification.Name("NewDrinkAdded"), object: nil)
         
-        // Mostrar mensaje de éxito
         let successAlert = UIAlertController(
             title: "New Drink Added",
             message: "The new drink has been successfully saved",
@@ -56,35 +48,47 @@ class NewDrinkViewController: UIViewController {
         )
         successAlert.addAction(UIAlertAction(title: "OK", style: .default))
         present(successAlert, animated: true)
-        
-        // Limpiar los campos de entrada
+
         nameTyped.text = ""
         ingredientsTyped.text = ""
         directionsTyped.text = ""
         addImg.text = ""
-        
-        
-        // Cerrar vista de New Drink
-        //dismiss(animated: true)
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // Do any additional setup after loading the view.
-    }
-    
+        
+        /*
+        // Configurar ancho del contentView para evitar desplazamiento horizontal
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
 
+        contentView.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.heightAnchor, constant: 1).isActive = true
+
+        // Bloquear desplazamiento horizontal
+        scrollView.isDirectionalLockEnabled = true
+        scrollView.alwaysBounceHorizontal = false
+         */
+    }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    */
 
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            scrollView.contentInset.bottom = keyboardFrame.height
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset.bottom = 0
+    }
+     */
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
 }
